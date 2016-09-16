@@ -71,4 +71,18 @@ CHLAUS_PASSWORD_HASH='$6$…' \
 gunicorn --reload wsgi
 ```
 
+
+Build Docker image
+------------------
+
+The image is built using
+[Source-To-Image](https://github.com/openshift/source-to-image).
+
+```
+s2i build ./ centos/python-35-centos7 appuio/chlaus
+```
+
+Then follow the instructions in the Docker Hub documentation to [publish the
+image](https://docs.docker.com/docker-hub/repos/#/pushing-a-repository-image-to-docker-hub).
+
 <!-- vim: set sw=2 sts=2 et : -->
